@@ -1,0 +1,35 @@
+:root {
+  --nav-background-color: #fff;
+}
+
+nav {
+  /* 用block而不用flex的目的是为了给margin 0 auto服务 */
+  display: block;
+  position: fixed;
+  /* 设置高z-index滚动时其他元素不影响navbar */
+  z-index: 999;
+
+  width: 100%;
+  top: 0;
+  padding: 0.7rem 0;
+  background-color: var(--nav-background-color);
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .container .logo {
+  /* 所有字母变成大写 */
+  text-transform: uppercase;
+  font-family: "Comfortaa", cursive;
+}
+
+nav .container .create {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}

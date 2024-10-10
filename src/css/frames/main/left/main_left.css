@@ -1,0 +1,23 @@
+/* Main Left */
+:root {
+  --left-profile-background-color: #fff;
+  --left-profile-padding: 1rem;
+  --left-profile-radius: 1rem;
+}
+
+.main-left {
+  position:relative;
+  /* 两个不同的单位相减用calc，设置左侧不能滚动 */
+  height: calc(100dvh - 5.4rem);
+  min-width: 200px;
+  overflow-x: hidden;
+}
+
+.main-left h2 {
+  font-size: 0.9rem;
+}
+
+.main-left p {
+  font-size: 0.7rem;
+}
+

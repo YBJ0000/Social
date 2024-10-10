@@ -1,0 +1,32 @@
+:root {
+  --btn-padding: 0.6rem 2rem;
+  --btn-border-radius: 2rem;
+}
+
+.btn {
+  /* '撑起来' */
+  display: inline-block;
+  padding: var(--btn-padding);
+  font-weight: 500;
+  border-radius: var(--btn-border-radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border-color: none;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-cancel {
+  background: var(--color-white);
+  box-shadow: 0 0 1px var(--color-gray);
+  color: var(--color-black);
+}
+
