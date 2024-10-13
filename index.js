@@ -18,13 +18,21 @@ sidebar.forEach((item) => {
   item.icon_class_list.forEach(iconClass => {
     i.classList.add(iconClass)
   })
+  sidebarItem.classList.add(item.name)
   const h2 = document.createElement('h2')
   h2.textContent = item.name
   
   span.appendChild(i)
   sidebarItem.appendChild(span)
   sidebarItem.appendChild(h2)
-
   sideBar.appendChild(sidebarItem)
+})
+
+const homeDom = document.querySelector('.Home')
+console.log(homeDom);
+
+homeDom.addEventListener('click', () => {
+  homeDom.classList.toggle('btn')
+  homeDom.classList.toggle('btn-primary')
 })
 
