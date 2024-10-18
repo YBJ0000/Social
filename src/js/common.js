@@ -1,6 +1,7 @@
+import { sidebar } from "../../data/db.json"
 import { findDom } from "./utils"
-import sideBar from "./components/mainLeft/sidebar"
-
+// import sideBar from "./components/mainLeft/sidebar"
+import Sidebar from "./components/mainLeft/ sidebarClassEdition"
 // Navbar
 
 const navbar = 
@@ -25,9 +26,12 @@ const main_container =
 const main_left = 
   findDom('.main-left', main_container)
 
-const sidebar = sideBar
+// const sidebar = sideBar
+// main_left.appendChild(sidebar)
 
-main_left.appendChild(sidebar)
+const sideBar = new Sidebar(sidebar)
+console.log(sideBar);
+main_left.appendChild(sideBar.dom)
 
 // MainMiddle
 
