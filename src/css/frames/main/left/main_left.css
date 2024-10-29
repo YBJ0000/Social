@@ -1,4 +1,4 @@
-/* Main Left */
+/* --- Main Left --- */
 :root {
   --left-profile-background-color: #fff;
   --left-profile-padding: 1rem;
@@ -6,11 +6,11 @@
 }
 
 .main-left {
-  position:relative;
-  /* 两个不同的单位相减用calc，设置左侧不能滚动 */
-  height: calc(100dvh - 5.4rem);
+  position: sticky;
+  height: calc(100vh - 5.4rem);
   min-width: 200px;
   overflow-x: hidden;
+  top: -0.5rem;
 }
 
 .main-left h2 {
@@ -21,3 +21,20 @@
   font-size: 0.7rem;
 }
 
+.main-left .profile {
+  display: flex;
+  align-items: center;
+  padding: var(--left-profile-padding);
+  border-radius: var(--left-profile-radius);
+  background: var(--left-profile-background-color);
+  column-gap: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.main-left .btn {
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+}

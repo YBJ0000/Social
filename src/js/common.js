@@ -33,6 +33,7 @@ const main_left =
 // main_left.appendChild(sidebar)
 
 const sideBar = new Sidebar(sidebar)
+// sideBar.build()
 main_left.appendChild(sideBar.dom)
 
 // MainMiddle

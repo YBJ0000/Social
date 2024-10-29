@@ -9,6 +9,8 @@ export default class Sidebar {
     this.build()
   }
 
+  // build不能是内部的，不能加#
+  // 除非在constructor里调用#build
   build() {
     this.dom = crtDom('div')
     this.dom.classList.add('sidebar')
@@ -20,6 +22,7 @@ export default class Sidebar {
 
     return this.dom
   }
+
 }
 
 class MenuItem {

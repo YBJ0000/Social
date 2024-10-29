@@ -1,4 +1,5 @@
-/* Main Left Side */
+/* --- Main Left Side --- */
+
 .main-left .sidebar {
   margin-top: 1rem;
   background: var(--left-profile-background-color);
@@ -16,7 +17,7 @@
 }
 
 .main-left .sidebar .menu-item:hover {
-  background-color: var(--color-white);
+  background: var(--color-white);
 }
 
 .main-left .sidebar .menu-item i {
