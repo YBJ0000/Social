@@ -1,10 +1,11 @@
-import { sidebar, profile } from "@/data/db.json"
+import { sidebar, profile, highline } from "@/data/db.json"
 import { findDom } from "@/js/utils"
 // import sideBar from "./components/mainLeft/sidebar"
 // import Sidebar from "./components/mainLeft/ sidebarClassEdition"
 import Sidebar from "@/js/components/mainLeft/sidebar"
 import Profile from "@/js/components/mainLeft/profile"
 import createPost from "./components/mainLeft/createPost"
+import Highline from "@/js/components/mainMiddle/highline"
 
 
 // Navbar
@@ -41,6 +42,9 @@ const main_left_createPost = createPost()
 main_left.appendChild(main_left_createPost)
 
 // MainMiddle
+const main_middle = findDom('.main-middle', main_container)
+const main_middle_highline = new Highline(highline).build()
+main_middle.appendChild(main_middle_highline)
 
 // MainRight
 
