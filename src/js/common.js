@@ -4,6 +4,7 @@ import { findDom } from "@/js/utils"
 // import Sidebar from "./components/mainLeft/ sidebarClassEdition"
 import Sidebar from "@/js/components/mainLeft/sidebar"
 import Profile from "@/js/components/mainLeft/profile"
+import createPost from "./components/mainLeft/createPost"
 
 
 // Navbar
@@ -35,6 +36,9 @@ main_left.appendChild(main_left_profile.dom)
 
 const sideBar = new Sidebar(sidebar)
 main_left.appendChild(sideBar.dom)
+
+const main_left_createPost = createPost()
+main_left.appendChild(main_left_createPost)
 
 // MainMiddle
 
