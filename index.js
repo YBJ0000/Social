@@ -5,5 +5,5 @@ import {
   main, 
   main_container, 
   main_left, 
-  sidebar } from './src/js/common';
+  sidebar } from '@/js/common';
 

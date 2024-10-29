@@ -1,8 +1,9 @@
-import { sidebar } from "../../data/db.json"
-import { findDom } from "./utils"
+import { sidebar, profile } from "@/data/db.json"
+import { findDom } from "@/js/utils"
 // import sideBar from "./components/mainLeft/sidebar"
 // import Sidebar from "./components/mainLeft/ sidebarClassEdition"
-import Sidebar from "./components/mainLeft/sidebarClassOptimize"
+import Sidebar from "@/js/components/mainLeft/sidebar"
+import Profile from "@/js/components/mainLeft/profile"
 
 
 // Navbar
@@ -29,11 +30,10 @@ const main_container =
 const main_left = 
   findDom('.main-left', main_container)
 
-// const sidebar = sideBar
-// main_left.appendChild(sidebar)
+const main_left_profile = new Profile(profile)
+main_left.appendChild(main_left_profile.dom)
 
 const sideBar = new Sidebar(sidebar)
-// sideBar.build()
 main_left.appendChild(sideBar.dom)
 
 // MainMiddle

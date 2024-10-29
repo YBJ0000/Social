@@ -1,47 +1,51 @@
-import { sidebar } from "../../../../data/db.json"
+import { crtDom } from "../../utils"
 
-const sideBar = document.createElement('div')
-sideBar.classList.add('sidebar')
+export default class Sidebar {
+  sidebarInfo = null
+  dom = null
 
-sidebar.forEach((item) => {
-  // 打包
-  createSideBarItem(item)
-})
+  constructor(sidebarInfo) {
+    this.sidebarInfo = sidebarInfo
+    this.build()
+  }
 
-function createSideBarItem(item) {
+  // build不能是内部的，不能加#
+  // 除非在constructor里调用#build
+  build() {
+    this.dom = crtDom('div')
+    this.dom.classList.add('sidebar')
 
-  const sidebarItem = createBasicSideBarItem(item)
-  const icon = createIcon(item)
-  const title = createTitle(item)
+    this.sidebarInfo.forEach(item => {
+      const menuItem = new MenuItem(item).build()
+      this.dom.appendChild(menuItem)
+    })
 
-  sidebarItem.appendChild(icon)
-  sidebarItem.appendChild(title)
-  sideBar.appendChild(sidebarItem)
+    return this.dom
+  }
+
 }
 
-function createBasicSideBarItem(item) {
-  const sidebarItem = document.createElement('a')
-  sidebarItem.classList.add('menu-item')
-  sidebarItem.classList.add(item.name)
-  return sidebarItem
+class MenuItem {
+  title = null
+  iconList = null
+  dom = null
+
+  constructor(itemInfo) {
+    this.title = itemInfo.name
+    this.iconList = itemInfo.icon_class_list
+  }
+
+  build() {
+    this.dom = crtDom('a')
+    this.dom.classList.add('menu-item')
+
+    this.dom.innerHTML = `
+      <span>
+        <i class="${this.iconList.join(" ")}"></i>
+      </span>
+      <h2>${this.title}</h2>
+    `
+
+    return this.dom
+  }
 }
-
-function createIcon(item) {
-  const span = document.createElement('span')
-  const i = document.createElement('i')
-  item.icon_class_list.forEach(iconClass => {
-    i.classList.add(iconClass)
-  })
-  span.appendChild(i)
-  return span
-}
-
-function createTitle(item) {
-  const h2 = document.createElement('h2')
-  h2.textContent = item.name
-  return h2
-}
-
-console.log(sideBar);
-
-export default sideBar
