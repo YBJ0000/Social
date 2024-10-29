@@ -1,4 +1,4 @@
-import { sidebar, profile, highline } from "@/data/db.json"
+import { sidebar, profile, highline, cards, message, request } from "@/data/db.json"
 import { findDom } from "@/js/utils"
 // import sideBar from "./components/mainLeft/sidebar"
 // import Sidebar from "./components/mainLeft/ sidebarClassEdition"
@@ -6,6 +6,7 @@ import Sidebar from "@/js/components/mainLeft/sidebar"
 import Profile from "@/js/components/mainLeft/profile"
 import createPost from "./components/mainLeft/createPost"
 import Highline from "@/js/components/mainMiddle/highline"
+import { create_message } from "@/js/components/mainRight/createMessage"
 
 
 // Navbar
@@ -47,6 +48,9 @@ const main_middle_highline = new Highline(highline).build()
 main_middle.appendChild(main_middle_highline)
 
 // MainRight
+const main_right = findDom('.main-right', main_container)
+const main_right_message = create_message()
+main_right.appendChild(main_right_message)
 
 export {
   navbar,
@@ -57,5 +61,8 @@ export {
   main,
   main_container,
   main_left,
-  sidebar
+  sideBar,
+  main_left_createPost,
+  main_right,
+  main_right_message
 }

@@ -46,6 +46,7 @@
   font-size: small;
   position: relative;
   cursor: pointer;
+  transition: all 0.3s;
 }
 
 .function-panel span.active {
