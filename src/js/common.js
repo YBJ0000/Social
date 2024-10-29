@@ -4,9 +4,13 @@ import { findDom } from "@/js/utils"
 // import Sidebar from "./components/mainLeft/ sidebarClassEdition"
 import Sidebar from "@/js/components/mainLeft/sidebar"
 import Profile from "@/js/components/mainLeft/profile"
-import createPost from "./components/mainLeft/createPost"
 import Highline from "@/js/components/mainMiddle/highline"
 import { create_message } from "@/js/components/mainRight/createMessage"
+import FriendList from "@/js/components/mainRight/friendList"
+import RequestList from "./components/mainRight/requestList"
+import { create_post as create_post_main_middle } from "./components/mainMiddle/createPost"
+import createPost from "./components/mainLeft/createPost"
+import { CardList } from "./components/mainMiddle/cardList"
 
 
 // Navbar
@@ -46,11 +50,20 @@ main_left.appendChild(main_left_createPost)
 const main_middle = findDom('.main-middle', main_container)
 const main_middle_highline = new Highline(highline).build()
 main_middle.appendChild(main_middle_highline)
+const main_middle_create_post = create_post_main_middle(profile)
+main_middle.appendChild(main_middle_create_post)
+const main_middle_cardList = new CardList(cards).build()
+main_middle.appendChild(main_middle_cardList)
 
 // MainRight
 const main_right = findDom('.main-right', main_container)
 const main_right_message = create_message()
 main_right.appendChild(main_right_message)
+const main_right_friend_list = new FriendList(message).build()
+main_right_message.appendChild(main_right_friend_list)
+const main_right_request_list = new RequestList(request).build()
+main_right.appendChild(main_right_request_list)
+
 
 export {
   navbar,
